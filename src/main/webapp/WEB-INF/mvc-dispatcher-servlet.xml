@@ -10,18 +10,18 @@
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
 
-    <context:component-scan base-package="bt.gov.ditt.paroHss"/>
+    <context:component-scan base-package="bt.education.shariHss"/>
 
-    <context:component-scan base-package="bt.gov.ditt.paroHss"/>
+    <context:component-scan base-package="bt.education.shariHss"/>
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <mvc:annotation-driven/>
 
-   <!-- <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-   <!-- <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-    </bean>-->
-  <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-      <property name="maxUploadSize" value="50000000"/>
-  </bean>
+    <!-- <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+    <!-- <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+     </bean>-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="50000000"/>
+    </bean>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>

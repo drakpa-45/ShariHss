@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-<sitemesh>
+<!--<sitemesh>
     <mapping path="/*" decorator="/layout/layout.jsp"/>
     <mapping path="/notification" decorator="/layout/blank.jsp"/>
-
     <mapping path="*PopupAjax*" exclue="true"/>
     <mapping path="/resources/reports/*" exclue="true"/>
 </sitemesh>-->
 <sitemesh>
     <mapping path="/*" decorator="/layout/layoutCitizen.jsp"/>
-    <mapping path="*/appHistory*" decorator="/layout/EmptyPage.jsp"/>
-    <mapping path="*/loginMain*" decorator="/layout/adminLayout.jsp"/>
+    <mapping path="*/appHistory*" decorator="/layout/emptyLayout.jsp"/>
+    <mapping path="*/login*" decorator="/layout/emptyLayout.jsp"/>
+    <mapping path="*/admin/*" decorator="/layout/adminLayout.jsp"/>
     <mapping path="*/loadpagetoemptylayout*" decorator="/layout/EmptyPage.jsp"/>
 </sitemesh>

@@ -11,6 +11,66 @@
 <html>
 <head>
     <title></title>
+    <style>
+        .card-counter{
+            box-shadow: 2px 2px 10px #DADADA;
+            margin: 5px;
+            padding: 20px 10px;
+            background-color: #fff;
+            height: 100px;
+            border-radius: 5px;
+            transition: .3s linear all;
+        }
+
+        .card-counter:hover{
+            box-shadow: 4px 4px 20px #DADADA;
+            transition: .3s linear all;
+        }
+
+        .card-counter.primary{
+            background-color: #ffefce;
+            color: #FFF;
+        }
+
+        .card-counter.danger{
+            background-color: #deeacd;
+            color: #FFF;
+        }
+
+        .card-counter.success{
+            background-color: #e0eae1;
+            color: #FFF;
+        }
+
+        .card-counter.info{
+            background-color: #ccd9da;
+            color: #FFF;
+        }
+
+        .card-counter i{
+            font-size: 5em;
+            opacity: 0.2;
+        }
+
+        .card-counter .count-numbers{
+            position: absolute;
+            right: 35px;
+            top: 20px;
+            font-size: 32px;
+            display: block;
+        }
+
+        .card-counter .count-name{
+            position: absolute;
+            right: 35px;
+            top: 65px;
+            font-style: italic;
+            text-transform: capitalize;
+            opacity: 0.5;
+            display: block;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 <!-- ======= Blog Section ======= -->
@@ -60,7 +120,6 @@
             <div class="col-lg-4 col-md-6 content-item">
                 <h4>MISSION</h4>
                 <p class="fst-italic">"To create enabling conditions for our students to realize their potential to be honest, self-disciplined, responsible, dedicated, committed, and cooperative citizens who are academically sound morally upright, physically fit, culturally sensitive, ecologically conscious, and socially productive as just and loyal citizens."</p>
-
             </div>
             <div class="col-lg-4 col-md-6 content-item">
                 <h4>CORE VALUES</h4>
@@ -83,7 +142,7 @@
                     <li> <i class="bi bi-key" style="color: #00b3ff"></i>&nbsp; Perseverance to improve further</li>
                 </ul>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 content-item">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-item">
                 <h4>SCHOOL TIMING</h4>
                 <div class="panel panel-default">
                 <div class="panel-body">
@@ -160,12 +219,43 @@
                 </div>
             </div>
             </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 content-item">
+                <span>School stats</span>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card-counter primary">
+                                <i class="bi bi-person-badge-fill"></i>
+                                <span class="count-numbers">750</span>
+                                <span class="count-name">TOTAL STUDENTS</span>
+                            </div>
+                        </div>
 
-            <%--<div class="col-lg-4 col-md-6 content-item">
-                <span>06</span>
-                <h4>Facilis Impedit</h4>
-                <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
-            </div>--%>
+                        <div class="col-md-3">
+                            <div class="card-counter danger">
+                                <i class="bi bi-person-bounding-box"></i>
+                                <span class="count-numbers">400</span>
+                                <span class="count-name">BOYS</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-counter success">
+                                <i class="bi bi-people"></i>
+                                <span class="count-numbers">350</span>
+                                <span class="count-name">GIRLS</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card-counter info">
+                                <i class="bi bi-people-fill"></i>
+                                <span class="count-numbers">102</span>
+                                <span class="count-name">TOTAL STAFF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section><!-- End Why Us Section -->

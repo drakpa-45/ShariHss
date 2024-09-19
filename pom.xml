@@ -145,14 +145,6 @@
             <version>1.4.4</version>
         </dependency>
 
-        <!--g2c payment-->
-        <dependency>
-            <groupId>G2CPaymentClient</groupId>
-            <artifactId>G2CPaymentClient</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <!--end-->
-
         <dependency>
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
@@ -163,12 +155,6 @@
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
             <version>2.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.wso2.client</groupId>
-            <artifactId>G2C_CommonBusinessAPIOld</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -457,16 +443,6 @@
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
             <version>1.5.15</version>
-        </dependency>
-        <dependency>
-            <groupId>org.wso2.client.G2C_CommonBusinessAPI</groupId>
-            <artifactId>G2C_CommonBusinessAPI</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.wso2.client.DCRC_CitizenDetailsAPI</groupId>
-            <artifactId>org.wso2.client.DCRC_CitizenDetailsAPI</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>

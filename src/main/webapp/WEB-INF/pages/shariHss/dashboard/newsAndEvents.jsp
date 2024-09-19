@@ -1,3 +1,5 @@
+<%@ page import="bt.education.shariHss.dto.NewsDTO" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: Drakpa
@@ -523,6 +525,8 @@
     </style>
 </head>
 <body>
+<% List<NewsDTO> newsDetails=(List<NewsDTO>) request.getAttribute("newsDetails"); %>
+<% List<NewsDTO> announcement=(List<NewsDTO>) request.getAttribute("announcement"); %>
 <!-- ======= Blog Section ======= -->
 <%-- <div class="row no-gutters">
                 <div class="col-lg-4 col-md-6">
@@ -551,97 +555,115 @@
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-lg-8 entries">
+                <%for(int i=0;i<newsDetails.size();i++){%>
                 <article class="entry">
                     <div class="entry-img">
-                        <img src="<c:url value="/resources/assets/img/blog/blog-1.jpg"/>" alt="" class="img-fluid">
+                       <%-- <img src="<c:url value="/resources/assets/img/blog/blog-2.jpg"/>" alt="" class="img-fluid">--%>
+                           <img src="https://drive.google.com/uc?export=view&id=<%=newsDetails.get(i).getGoogleImageId()%>" class="img-fluid" alt="">
                     </div>
                     <h2 class="entry-title">
-                        <a href="blog-single.html">School Rimdo Concludes with Kaago and Luung by Venerable Lam Neten of Paro Dratshang</a>
+                        <a href="blog-single.html"><%=newsDetails.get(i).getTitle()%></a>
                     </h2>
                     <div class="entry-meta">
                         <ul>
-                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Kelzang Sherab</a></li>
-                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2023-03-01">March 1, 2023</time></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html"><%=newsDetails.get(i).getAuthor()%></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2023-03-01"><%=newsDetails.get(i).getPublishedOn()%></time></a></li>
                             <%--<li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>--%>
                         </ul>
                     </div>
                     <div class="entry-content">
                         <p>
-                            We are bound by the four elements of earth, water, fire and wind. Our body is therefore vulnerable to these elements at any time. We need to protect ourselves by evocking the deities on a regular basis.
-                            One such program in the school is the school rimdo. In a most befitting manner, the school conducted rimdo today. The school was blessed to have the presence of venerable Lam Neten of Paro dratshang. Lam took his break time to interact with the children to initiate Kago and Luung to the members of the school. It was also touching to have his heart touching advice to our children on the values of time  and other issues pertaining our youth of the present time. There was much awakening and a sense of realization in all. A powerful message indeed.
-                            There was the feel of the occasion unlike other times.
+                            <%=newsDetails.get(i).getContent()%>
                         </p>
                         <div class="read-more">
                             <a href="#blog1">Read More</a>
                         </div>
                         <p id="blog1" style="display: none">
-                            We are bound by the four elements of earth, water, fire and wind. Our body is therefore vulnerable to these elements at any time. We need to protect ourselves by evocking the deities on a regular basis.
-                            One such program in the school is the school rimdo. In a most befitting manner, the school conducted rimdo today. The school was blessed to have the presence of venerable Lam Neten of Paro dratshang. Lam took his break time to interact with the children to initiate Kago and Luung to the members of the school. It was also touching to have his heart touching advice to our children on the values of time  and other issues pertaining our youth of the present time. There was much awakening and a sense of realization in all. A powerful message indeed.
-                            There was the feel of the occasion unlike other times.
+                            <%=newsDetails.get(i).getContentMore()%>
                         </p>
                     </div>
-                </article><!-- End blog entry -->
-                <article class="entry">
-                    <div class="entry-img">
-                        <img src="<c:url value="/resources/assets/img/blog/blog-2.jpg"/>" alt="" class="img-fluid">
-                    </div>
-                    <h2 class="entry-title">
-                        <a href="blog-single.html">Children revive the culture of Traditional dance competition. </a>
-                    </h2>
-                    <div class="entry-meta">
-                        <ul>
-                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Drakpa</a></li>
-                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                            <%--<li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>--%>
-                        </ul>
-                    </div>
-                    <div class="entry-content">
-                        <p>
-                            Our vibrant culture was given a voice in the school again. It is one that makes what we are. Our unique way of portraying the identity falls on each one of us and more so the youth who are the future of the nation.
-                            Such programs were given no space in the school annual calendar in the last few years and has affected our children so much. Our children had to re-learn the basics of choreography from the scratch yet the performance was not bad.
-                            Children only needs guidance and a bit of inspiration from the teachers and elders. There is nothing that cannot be achieved given the right direction and instruction. Failure comes only from an unclear instruction and directions.
-                        </p>
-                        <div class="read-more">
-                            <a href="blog-single.html">Read More</a>
-                        </div>
-                    </div>
-                </article><!-- End blog entry -->
-                <article class="entry">
+                </article>
+                <%}%>
+                <!-- End blog entry -->
+                <%--<article class="entry">
                     <div class="entry-img">
                         <img src="<c:url value="/resources/assets/img/blog/blog-3.jpg"/>" alt="" class="img-fluid">
                     </div>
                     <h2 class="entry-title">
-                        <a href="blog-single.html">Elected Captains are awarded with badge and oath taking ceremony.</a>
+                        <a href="blog-single.html"><%=newsDetails.get(1).getTitle()%> </a>
                     </h2>
                     <div class="entry-meta">
                         <ul>
-                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                            <%--<li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>--%>
+                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html"><%=newsDetails.get(1).getAuthor()%></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01"><%=newsDetails.get(1).getPublishedOn()%></time></a></li>
+                            &lt;%&ndash;<li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>&ndash;%&gt;
                         </ul>
                     </div>
                     <div class="entry-content">
                         <p>
-                            Captains badge awarding and oath taking ceremony was held today morning during the assembly at the courtyard of the administrative block. Students were briefed on their roles as they take up the leadership responsibilities this auspicious day on the 14th of March 2023. It is important to learn and experience new ideas when the opportunity knocks.
-                            The elected captains were the creams of the school. Hereafter, they will steer the wheel of Shari HSS along with the Principal and staff till the end of the academic session. We would like to congratulate each one of them and wish them a wonderful academic year ahead.
-                            May the school shine through the tireless efforts and the wonderful support rendered in various capacities.
+                            <%=newsDetails.get(1).getContent()%>
                         </p>
                         <div class="read-more">
                             <a href="blog-single.html">Read More</a>
                         </div>
                     </div>
                 </article><!-- End blog entry -->
-                <%--<div class="blog-pagination">
-                    <ul class="justify-content-center">
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                    </ul>
-                </div>--%>
+                <article class="entry">
+                    <div class="entry-img">
+                        <img src="<c:url value="/resources/assets/img/blog/blog-1.jpg"/>" alt="" class="img-fluid">
+                    </div>
+                    <h2 class="entry-title">
+                        <a href="blog-single.html"><%=newsDetails.get(2).getTitle()%></a>
+                    </h2>
+                    <div class="entry-meta">
+                        <ul>
+                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html"><%=newsDetails.get(2).getAuthor()%></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01"><%=newsDetails.get(2).getPublishedOn()%></time></a></li>
+                            &lt;%&ndash;<li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>&ndash;%&gt;
+                        </ul>
+                    </div>
+                    <div class="entry-content">
+                        <p>
+                            <%=newsDetails.get(2).getContent()%>
+                        </p>
+                        <div class="read-more">
+                            <a href="blog-single.html">Read More</a>
+                        </div>
+                    </div>
+                </article>--%>
             </div><!-- End blog entries list -->
 
             <div class="col-lg-4 col-md-12 col-sm-12">
-                <jsp:include page="login.jsp"></jsp:include>
+                <div class="sidebar">
+                    <form action="<c:url value="/login"/>" method="post">
+                    <h3 class="sidebar-title">Sign In</h3>
+                    <!-- End sidebar search formn-->
+                    <div class="sidebar-item recent-posts">
+                        <div class="post-item clearfix">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                                <input type="text" class="form-control" placeholder="username" name="userId">
+                            </div>
+                            <div class="input-group-prepend mt-3">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="password" name="password">
+                            </div>
+                            <div class="row align-items-center remember mt-3">
+                                <input type="checkbox">Remember Me
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="submit" value="Login" class="btn center login_btn">
+                            </div>
+                            <%--<div class="d-flex justify-content-center links">
+                                Don't have an account?<a href="#">Sign Up</a>
+                            </div>--%>
+                            <div class="d-flex justify-content-center">
+                                <a href="#">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    </form>    <!-- End sidebar recent global posts-->
+                </div>
                 <div class="sidebar">
                     <h3 class="sidebar-title">Search</h3>
                     <div class="sidebar-item search-form">
@@ -651,14 +673,20 @@
                         </form>
                     </div>
                     <!-- End sidebar search formn-->
-                    <h3 class="sidebar-title">Recent Global News</h3>
+                    <h3 class="sidebar-title">ANNOUNCEMENT &nbsp; <i class="bi bi-megaphone text-orange"></i></h3>
                     <div class="sidebar-item recent-posts">
+                        <%for(int i=0;i<announcement.size();i++){%>
                         <div class="post-item clearfix">
-                            <img src="assets/img/blog/blog-recent-1.jpg" alt="">
-                            <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                            <time datetime="2020-01-01">Jan 1, 2020</time>
+                            <%--<img src="assets/img/blog/blog-recent-1.jpg" alt="">--%>
+                            <h5><a href="#"><%=announcement.get(i).getTitle()%></a></h5>
+                            <p><%=announcement.get(i).getContent()%></p>
+                                <%if(announcement.get(i).getGoogleImageId()!=null){%>
+                                    <a href="<%=announcement.get(i).getGoogleImageId()%>">Click here for detail</a>
+                                <%}%>
                         </div>
-                        <div class="post-item clearfix">
+                        <%}%>
+
+                        <%--<div class="post-item clearfix">
                             <img src="assets/img/blog/blog-recent-2.jpg" alt="">
                             <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
                             <time datetime="2020-01-01">Jan 1, 2020</time>
@@ -667,26 +695,25 @@
                             <img src="assets/img/blog/blog-recent-3.jpg" alt="">
                             <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
                             <time datetime="2020-01-01">Jan 1, 2020</time>
-                        </div>
+                        </div>--%>
                     </div><!-- End sidebar recent global posts-->
                 </div><!-- End sidebar -->
                     <div class="sidebar">
-                        <h3 class="sidebar-title">Recent National News</h3>
+                        <h3 class="sidebar-title">QUICK LINKS &nbsp; <i class="bi bi-link text-orange"></i></h3>
                         <div class="sidebar-item recent-posts">
                             <div class="post-item clearfix">
-                                <img src="assets/img/blog/blog-recent-3.jpg" alt="">
-                                <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                                <%--<img src="assets/img/blog/blog-recent-3.jpg" alt="">--%>
+                                <h5><a href="https://www.gov.bt/ministry-of-education-and-skills-development/" target="_blank">Ministry of Education and Skills Development</a></h5>
+                               <%-- <time datetime="2020-01-01">Jan 1, 2020</time>--%>
                             </div>
                             <div class="post-item clearfix">
-                                <img src="assets/img/blog/blog-recent-4.jpg" alt="">
-                                <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                                <%--<img src="assets/img/blog/blog-recent-4.jpg" alt="">--%>
+                                <h5><a href="https://www.rcsc.gov.bt/en/" target="_blank">Royal Civil Service Commission, Royal Government of Bhutan</a></h5>
+                                <%--<time datetime="2020-01-01">Jan 1, 2020</time>--%>
                             </div>
                             <div class="post-item clearfix">
-                                <img src="assets/img/blog/blog-recent-5.jpg" alt="">
-                                <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                               <%-- <img src="assets/img/blog/blog-recent-5.jpg" alt="">--%>
+                                <h5><a href="http://www.bbs.bt/news/" target="_blank">Bhutan Boardcasting Service</a></h5>
                             </div>
                         </div><!-- End sidebar recent Nation posts-->
                     </div><!-- End sidebar -->

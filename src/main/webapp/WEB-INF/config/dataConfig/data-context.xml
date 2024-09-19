@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:annotation-config/>
 
     <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -22,10 +19,10 @@
         </property>
     </bean>
 
-    <tx:annotation-driven transaction-manager="txManager"/>
     <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="emFactory"/>
     </bean>
+    <tx:annotation-driven transaction-manager="txManager"/>
 
     <bean id="persistenceExceptionTranslationPostProcessor"
           class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor">
@@ -33,12 +30,10 @@
 
     <!-- For MySql -->
     <bean id="queryProps" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <!-- For oracle -->
         <property name="locations">
             <list>
-                <!--MySql files properties-->
                 <value>classpath*:query/query_constant.sql</value>
-                <!-- Properties Files -->
-                <!--<value>classpath*:fileUpload/fileUpload.properties</value>-->
             </list>
         </property>
     </bean>

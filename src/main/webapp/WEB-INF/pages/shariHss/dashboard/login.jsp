@@ -10,12 +10,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!------ Include the above in your HEAD tag ---------->
 
-<html>
-<head>
-    <title>Login Page</title>
-   <!--Custom styles-->
-    <link href="<c:url value="/resources/assets/css/loginStyle.css"/>" rel="stylesheet">
-</head>
 <body>
 <div class="container">
     <div class="d-flex justify-content-center h-100">
@@ -60,4 +54,3 @@
     </div>
 </div>
 </body>
-</html>

@@ -1,6 +1,6 @@
-<%@ page import="bt.gov.ditt.paroHss.dto.Privilege" %>
-<%@ page import="bt.gov.ditt.paroHss.dto.Service" %>
-<%@ page import="bt.gov.ditt.paroHss.dto.UserRolePrivilegeDTO" %>
+<%@ page import="bt.education.shariHss.dto.Privilege" %>
+<%@ page import="bt.education.shariHss.dto.Service" %>
+<%@ page import="bt.education.shariHss.dto.UserRolePrivilegeDTO" %>
 <%--
   Created by IntelliJ IDEA.
   User: Pema Drakpa
@@ -8,144 +8,82 @@
   Time: 2:10 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%
-    System.out.println("############################ INSIDE THE LAYOUT %%%%%%%%%%%");
-    String roleName = "";
-    String userId = "";
-    String CurrentUser = "";
-    UserRolePrivilegeDTO userBean = null;
-    if (session.getAttribute("UserRolePrivilege") != null) {
-        userBean = (UserRolePrivilegeDTO) session.getAttribute("UserRolePrivilege");
-        String LocationId = "";
-        for (int n = 0; n < userBean.getJurisdictions().length; n++) {
-            LocationId = userBean.getJurisdictions()[n].getLocationID();
-            //System.out.println("Jurisdiction Id: " + dto.getJurisdictions()[n].getJurisdiction() + " Jurisdiction Type:  " + dto.getJurisdictions()[n].getJurisdictionType() + " Location Id: " + dto.getJurisdictions()[n].getLocationID());
-        }
-        /*for (int m = 0; m < userBean.getRoles().length; m++) {
-            for (int i = 0; i < userBean.getRoles()[m].getServices().length; i++) {
-                Service svc = userBean.getCurrentRole().getServices()[i];
-                for (int j = 0; j < svc.getPrivileges().length; j++) {
-                    Privilege priv = svc.getPrivileges()[j];
-                    //  System.out.println("role name : " + userBean.getRoles()[m].getRoleCode() + " svc name : " + svc.getServiceName() + " && priv code : " + priv.getPrivilegeCode() + "(" + priv.getPrivilegeId() + ")");
-                }
-            }
-        }*/
-        userId = userBean.getCurrentRole().getRoleName();
-        CurrentUser = userBean.getUserID();
-        //String location  = userBean.getJurisdictions()[0].getJurisdictionType();
-        //System.out.print(location);
-        System.out.println("=== current user is : " + userId);
-    }%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Language" content="en"/>
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="theme-color" content="#4188c9">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <title>Home</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Shari</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="<c:url value="/resources/assets/img/logo.png"/>" rel="shari-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 </head>
 <body>
-<div class="header py-4" style="background:#236F67; height:108px;">
-    <div class="container">
-        <div class="d-flex">
-            <img src="<c:url value="/resources/images/logo.png"/>" class="header-brand-img" alt="tabler logo"
-                 style="height:100px; width:90px;">
-
-            <h3 class="text-white" style="margin-top:-2px;"><br/>
-                Government to Citizen Service Delivery Initiative<br/>
-                <span style="font-size:smaller;">Ministry of Agriculture and Forests</span>
-            </h3>
-
-            <div class="d-flex order-lg-2 ml-auto">
-                <div class="dropdown">
-                    <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown" style="margin-top:-2px;">
-                        <span style="background-image: url(../../resources/images/profile.png)" class="avatar"></span>
-                        <span class="ml-2 d-none d-lg-block">
-                             <%if (userBean.getCurrentRole().getRoleName().equalsIgnoreCase("CC Operator")) {%>
-                            <small class="text-white d-block mt-1"><%=userBean.getFullName().replaceAll("null", "")%></small>
-                                 <%if (userBean.getCurrentRole().getRoleName().equalsIgnoreCase("CC Operator")){%>
-                            <small class="text-white d-block mt-1">Community Center</small>
-                                 <%}%>
-                            <small class="text-white d-block mt-1"><%=userBean.getJurisdictions()[0].getJurisdiction()%>
-                            </small><%}%>
-
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                        <a class="dropdown-item" style="color:#71dd8a;">
-                            <i class="dropdown-icon fe fe-help-circle"></i>Need help?
-                        </a>
-                        <a class="dropdown-item" href="<c:url value="/common/logout"/>" style="color:#71dd8a;">
-                            <i class="dropdown-icon fe fe-log-out"></i>Sign out
-                        </a>
-                    </div>
-                    </span>
-                </div>
-            </div>
+<jsp:include page="css.jsp"></jsp:include>
+<jsp:include page="context.jsp"></jsp:include>
+<!-- ======= Top Bar ======= -->
+<section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">pr.sharihss@education.gov.bt</a>
+            <i class="bi bi-phone-fill phone-icon"></i> +975-8-272588
+        </div>
+        <div class="social-links d-none d-md-block">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
     </div>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-lg-flex header p-0" id="headerMenuCollapse">
-    <div class="container">
-        <div class="row pull-left">
-            <div class="col-lg order-lg-first">
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active pr-2">
-                                <a class="nav-link" style="color:#ffffff;" href="<c:url value="/common/redirect"><c:param name="userId" value="<%=userBean.getCurrentRole().getRoleName()%>"/>
-                                <c:param name="CurrentUser" value="<%=CurrentUser%>"/><c:param name="locationId" value="<%=userBean.getJurisdictions()[0].getLocationID()%>"/></c:url>">
-                                <i class="fa fa-home"></i>&nbsp;Home <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item pr-2">
-                                <a href="javascript:void(0)" class="nav-link" style="color:#ffffff;"
-                                   data-toggle="dropdown"><i class="fa fa-tree"></i> &nbsp; Rural House Building Timber <i class="fa fa-chevron-down"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-arrow"
-                                    style="margin-top:2px; color:#000000;">
-                                    <li class="has-dropdown" class="dropdown-item" style="position:relative;"><a href="<c:url value="/ruralTimber/ruralTimberApplication"><c:param name="cons_type" value="n"/></c:url>"
-                                            class="dropdown-item">New Construction of Rural Houses</a>
-                                    </li>
-                                    <li class="has-dropdown"><a href="<c:url value="/ruralTimber/ruralTimberApplication"><c:param name="cons_type" value="r"/></c:url>" class="dropdown-item">Repair OR Renovation OR Extension of Rural Houses</a>
-                                    </li>
-                                    <li class="has-dropdown" class="dropdown-item" style="position: relative;"><a href="<c:url value="/ruralTimber/ruralTimberApplication"><c:param name="cons_type" value="o"/></c:url>"
-                                            class="dropdown-item">Other Rural Construction </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item pr-2">
-                                <a href="<c:url value="/woodPole/wood_Pole"><c:param name="cons_desc" value="WP"/></c:url>" class="nav-link" style="color:#ffffff;"> <i class="fa fa-bacon"></i>&nbsp; Permit For Pole and Firewood</a>
-                            </li>
-                            <li class="nav-item pr-2">
-                                <a href="<c:url value="/privateLand/private"></c:url>" class="nav-link" style="color:#ffffff;"> <i class="fas fa-seedling"></i>&nbsp; Removal of Forest Produce From Private</a>
-                            </li>
-                            <li class="nav-item pr-2">
-                                <a href="<c:url value="/ruralTimber/claimAdditionalTimber"></c:url>" class="nav-link" style="color:#ffffff;"> <i class="fa-air-freshener fas"></i>&nbsp; Claim Balance Timber</a>
-                            </li>
-                            <li class="nav-item pr-2">
-                                <a href="${pageContext.request.contextPath}/ruralTimber/viewAppStatus" class="nav-link" style="color:#ffffff;"> <i class="fa fa-eye"></i>&nbsp;View Status</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+</section>
+
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+        <img src="<c:url value="/resources/assets/img/shari-icon.png"/>" alt="" style="height: 120px; width: 150px">
+        <Span class="logo me-auto"><a href="index.html">ཤར་རི་སློབ་གྲྭ།<br>SHARI HSS</a></Span>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="#services">Academic</a></li>
+                <li><a class="nav-link scrollto " href="#portfolio">Staff Profile</a></li>
+                <%-- <li><a class="nav-link scrollto" href="#team">Team</a></li>--%>
+                <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Forms</a></li>
+                        <%--<li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Deep Drop Down 1</a></li>
+                                <li><a href="#">Deep Drop Down 2</a></li>
+                                <li><a href="#">Deep Drop Down 3</a></li>
+                                <li><a href="#">Deep Drop Down 4</a></li>
+                                <li><a href="#">Deep Drop Down 5</a></li>
+                            </ul>
+                        </li>--%>
+                        <li><a href="#">Documents</a></li>
+                        <li><a href="#">Class Lists</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="getstarted scrollto" href="#blog">Admin Login</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
     </div>
-</div>
+</header><!-- End Header -->
+<jsp:include page="js.jsp"></jsp:include>
 </body>
 </html>

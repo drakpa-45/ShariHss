@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="bt.gov.ditt.paroHss"/>
+    <context:component-scan base-package="bt.education.shariHss"/>
 
     <import resource="dataConfig/connection-string.xml"/>
     <import resource="dataConfig/data-context.xml"/>
@@ -16,7 +16,7 @@
 
     <import resource="serviceDaoConfig/dop/dop-config.xml"/>-->
 
-    <bean id="baseDao" class="bt.gov.ditt.paroHss.base.BaseDao" abstract="true"/>
+    <bean id="baseDao" class="bt.education.shariHss.base.BaseDao" abstract="true"/>
 </beans>
 
 

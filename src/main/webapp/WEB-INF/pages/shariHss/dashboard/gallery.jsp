@@ -36,56 +36,36 @@
     <div class="row">
         <div class="row">
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail zoom" href="#" data-image-id="<c:url value="/resources/assets/img/clients/client-1.jpg"/>" data-toggle="modal" data-title="" data-image="/resources/assets/img/clients/client-1.jpg" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-1.jpg"/>" alt="Another alt text">
-                </a>
+                <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-1.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail zoom" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-2.jpg"/>" alt="Another alt text">
-                </a>
+                <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-2.jpg"/>" alt="Another alt text">
             </div>
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail zoom" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-6.jpg"/>" alt="Another alt text">
-                </a>
+                <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-6.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail zoom" href="#" data-image-id="" data-toggle="modal" data-title="Test1" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-4.jpg"/>" alt="Another alt text">
-                </a>
+               <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-4.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail zoom" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-8.jpg"/>" alt="Another alt text">
-                </a>
+                <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-8.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail zoom" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-6.jpg"/>" alt="Another alt text">
-                </a>
+                 <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-6.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-7.jpg"/>" alt="Another alt text">
-                </a>
+                <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-7.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-8.jpg"/>" alt="Another alt text">
-                </a>
+                <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-8.jpg"/>" alt="Another alt text">
             </div>
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-4.jpg"/>" alt="Another alt text">
-                </a>
+               <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-4.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#" data-image-id="/resources/assets/img/clients/client-8.jpg" data-toggle="modal" data-title="Im so nice" data-image="" data-target="#image-gallery">
-                    <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-8.jpg"/>" alt="Another alt text">
-                </a>
+               <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-8.jpg"/>" alt="Another alt text">
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                     <img class="img-thumbnail zoom" src="<c:url value="/resources/assets/img/clients/client-6.jpg"/>" alt="Another alt text">

@@ -71,6 +71,7 @@ input:focus{
     color: black;
     background-color: #FFC312;
     width: 100px;
+    margin-left: 75px;
 }
 
 .login_btn:hover{
